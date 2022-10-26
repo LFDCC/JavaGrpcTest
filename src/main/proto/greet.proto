@@ -1,0 +1,43 @@
+//版本
+syntax = "proto3";
+
+//生成的java包名
+//等效于生成的c#命名空间option csharp_namespace = "TestGrpcNetCoreService";
+option java_package="com.example.demo.greet";
+
+//包名 proto报名，最终生成的服务名称=包名+服务名称
+//如果没定义java_package，默认生成的包名=package greet;
+package my_package;
+
+//定义服务
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc EmptyHello(EmptyHelloRequest) returns (Empty);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+
+message EmptyHelloRequest{
+	int32 id=3;
+	map<string, string> attributes = 2;
+	People people=1;
+}
+
+message People{
+	string name =1;
+	int32 age=2;
+}
+
+message Empty{
+
+}
