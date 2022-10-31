@@ -1,1 +1,1 @@
-.netcore grpc test url：（https://github.com/LFDCC/TestGrpcService）
+.netcore grpc test url：(https://github.com/LFDCC/TestGrpcService)
